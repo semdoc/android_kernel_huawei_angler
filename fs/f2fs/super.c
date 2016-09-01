@@ -784,25 +784,7 @@ static int f2fs_show_options(struct seq_file *seq, struct dentry *root)
 #endif
 	if (test_opt(sbi, DISABLE_EXT_IDENTIFY))
 		seq_puts(seq, ",disable_ext_identify");
-	if (test_opt(sbi, INLINE_DATA))
-		seq_puts(seq, ",inline_data");
-	else
-		seq_puts(seq, ",noinline_data");
-	if (test_opt(sbi, INLINE_DENTRY))
-		seq_puts(seq, ",inline_dentry");
-	if (!f2fs_readonly(sbi->sb) && test_opt(sbi, FLUSH_MERGE))
-		seq_puts(seq, ",flush_merge");
-	if (test_opt(sbi, NOBARRIER))
-		seq_puts(seq, ",nobarrier");
-	if (test_opt(sbi, FASTBOOT))
-		seq_puts(seq, ",fastboot");
-	if (test_opt(sbi, EXTENT_CACHE))
-		seq_puts(seq, ",extent_cache");
-	else
-		seq_puts(seq, ",noextent_cache");
-	if (test_opt(sbi, DATA_FLUSH))
-		seq_puts(seq, ",data_flush");
-	seq_printf(seq, ",active_logs=%u", sbi->active_logs);
+
 
 	return 0;
 }
